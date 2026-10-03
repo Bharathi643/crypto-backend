@@ -1,6 +1,3 @@
-### `crypto-backend` README
-
-````md
 # Crypto Backend
 
 Node.js + Express + PostgreSQL + Binance REST/WebSocket + CoinGecko.
@@ -22,7 +19,7 @@ Node.js + Express + PostgreSQL + Binance REST/WebSocket + CoinGecko.
 - CoinGecko metadata is synced in the background and retried when required.
 - Bulk CoinGecko market data seeds metadata for configured coins.
 - Coin details fetch detailed CoinGecko metadata and store it in PostgreSQL.
-- Binance WebSocket pushes live ticker updates directly to Flutter and stores latest snapshots in PostgreSQL.
+- Binance WebSocket pushes live Binance ticker updates directly to Flutter and stores latest snapshots in PostgreSQL.
 
 ## Run
 
@@ -30,4 +27,3 @@ Node.js + Express + PostgreSQL + Binance REST/WebSocket + CoinGecko.
 npm install
 npm start
 ```
-````
