@@ -1,15 +1,33 @@
-# Crypto Backend - Metadata Fix
+### `crypto-backend` README
+
+````md
+# Crypto Backend
 
 Node.js + Express + PostgreSQL + Binance REST/WebSocket + CoinGecko.
 
-Important fixes:
+## Features
+
+- Binance REST market data
+- Binance historical candle data
+- Binance WebSocket live ticker updates
+- CoinGecko coin metadata
+- PostgreSQL persistence
+- Watchlist persistence
+- REST API endpoints
+- Live WebSocket gateway
+
+## Important flow
+
 - `/api/coins` writes fresh Binance REST market data to PostgreSQL and then reads from PostgreSQL before responding.
-- CoinGecko metadata is retried and synced in the background; failed metadata is marked `pending`, so it can be retried later instead of being permanently cached as unavailable.
-- A bulk CoinGecko `/coins/markets` request seeds name/image/market/supply for all configured coins in one call.
-- Coin details fetch full CoinGecko metadata on demand and store it in PostgreSQL.
-- WebSocket pushes live Binance ticker updates directly to Flutter and snapshots latest values to PostgreSQL every few seconds.
+- CoinGecko metadata is synced in the background and retried when required.
+- Bulk CoinGecko market data seeds metadata for configured coins.
+- Coin details fetch detailed CoinGecko metadata and store it in PostgreSQL.
+- Binance WebSocket pushes live ticker updates directly to Flutter and stores latest snapshots in PostgreSQL.
 
-Run:
+## Run
 
+```bash
 npm install
 npm start
+```
+````
