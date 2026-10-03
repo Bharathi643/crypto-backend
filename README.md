@@ -27,3 +27,17 @@ Node.js + Express + PostgreSQL + Binance REST/WebSocket + CoinGecko.
 npm install
 npm start
 ```
+
+## PostgreSQL Database
+
+Database: PostgreSQL
+
+Main tables:
+
+- coins
+- market_latest
+- candles
+- market_global
+- watchlist
+
+The complete database schema is available in `database/schema.sql`.
